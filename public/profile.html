@@ -74,108 +74,69 @@
         <hr class="italy" />
     </header>
 
-    <section id="schedules" class="page">
-
+    <section class="page" id="profile">
+        
         <header>
-            <h1>Agendamentos</h1>
+            <h1>Editar Dados</h1>
         </header>
 
         <main>
 
-            <div>
+            <header class="page-title">
+                <h2>Dados Pessoais</h2>
+                <hr />
+            </header>
 
-                <header class="page-title">
-                    <h2>Próximos</h2>                    
-                    <hr />
-                </header>
+            <form>
 
-                <ul>
-                    <li>
-                        <section>
-                            <div>
-                                <label>Data</label>
-                                <span>02/07/2020 às 9:00</span>
-                            </div>
-                            <div>
-                                <label>Status</label>
-                                <span>Confirmado</span>
-                            </div>
-                            <div>
-                                <label>Valor</label>
-                                <span>R$ 20,00</span>
-                            </div>
-                            <div class="service">
-                                <label>Serviço</label>
-                                <span>Revisão do veículo</span>
-                            </div>
-                        </section>
-                        <button type="button" class="cancel">Cancelar</button>
-                    </li>
-                    <li>
-                        <section>
-                            <div>
-                                <label>Data</label>
-                                <span>02/07/2020 às 9:00</span>
-                            </div>
-                            <div>
-                                <label>Status</label>
-                                <span>Confirmado</span>
-                            </div>
-                            <div>
-                                <label>Valor</label>
-                                <span>R$ 20,00</span>
-                            </div>
-                            <div class="service">
-                                <label>Serviço</label>
-                                <span>Revisão do veículo</span>
-                            </div>
-                        </section>
-                        <button type="button" class="cancel">Cancelar</button>
-                    </li>
-                </ul>
+                <div class="field">
+                    <input type="text" name="name" id="name" value="Djalma" />
+                    <label for="name">Nome Completo</label>
+                </div>
 
-            </div>
+                <div class="field">
+                    <input type="email" name="email" id="email" />
+                    <label for="email">E-mail</label>
+                </div>
 
-            <div>
+                <div class="field">
+                    <input type="date" name="birth_at" id="birth_at" />
+                    <label for="birth_at">Data de Nascimento</label>
+                </div>
 
-                <header class="page-title">
-                    <h2>Histórico</h2>
-                    <hr />
-                </header>
+                <div class="fields">
 
-                <ul>
-                    <li>
-                        <section>
-                            <div>
-                                <label>Data</label>
-                                <span>02/07/2020 às 9:00</span>
-                            </div>
-                            <div>
-                                <label>Status</label>
-                                <span>Confirmado</span>
-                            </div>
-                            <div>
-                                <label>Valor</label>
-                                <span>R$ 20,00</span>
-                            </div>
-                            <div class="service">
-                                <label>Serviço</label>
-                                <span>Revisão do veículo</span>
-                            </div>
-                        </section>
-                        <button type="button" class="cancel">Cancelar</button>
-                    </li>
-                </ul>
+                    <div class="field">
+                        <input type="text" name="document" id="document" />
+                        <label for="document">Documento</label>
+                    </div>
 
-            </div>
+                    <div class="field">
+                        <input type="tel" name="phone" id="phone" />
+                        <label for="phone">Telefone</label>
+                    </div>
 
-            <footer class="fixed">
-                <a href="schedules-new.html" class="black">Novo Agendamento</a>
-            </footer>
+                </div>
 
-        </main>
+                <div class="toast success open">
+                    Dados salvos com sucesso!
+                    <button type="button" class="close">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                
+                <footer class="fixed">
+    
+                    <button type="submit">Salvar</button>
+    
+                </footer>
+            </form>
+
+        </main>        
 
     </section>
+
+    <script src="bundle.js"></script>
 
 </body>
 </html>

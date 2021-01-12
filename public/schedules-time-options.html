@@ -74,44 +74,74 @@
         <hr class="italy" />
     </header>
 
-    <section class="page" id="change-photo">
-        
+    <section id="time-options" class="page blue">
+
         <header>
-            <h1>Mudar Foto</h1>
+            <h1>Escolha o Horário</h1>
         </header>
 
         <main>
 
-            <form>
+            <header class="page-title">
+                <h2>Horários do Dia</h2>
+                <hr />
+            </header>
 
-                <img src="assets/images/user@4x.png" alt="Foto Atual" id="photo-preview" />
+            <form action="schedules-services.html">
 
-                <input type="file" name="photo" id="file">
+                <h3>Quinta, 23 de julho de 2020</h3>
 
-                <input type="hidden" name="x" />
-                <input type="hidden" name="y" />
-                <input type="hidden" name="width" />
-                <input type="hidden" name="height" />
+                <div class="options">
 
-                <button type="button" class="choose-photo">Escolher Foto</button>
+                    <label>
+                        <input type="radio" name="option" value="9:00" />
+                        <span>9:00</span>
+                    </label>
 
-                <div class="toast success open">
-                    Foto alterada com sucesso!
-                    <button type="button" class="close">
-                        <span>&times;</span>
-                    </button>
+                    <label>
+                        <input type="radio" name="option" value="10:00" checked />
+                        <span>10:00</span>
+                    </label>
+
+                    <label>
+                        <input type="radio" name="option" value="11:00" />
+                        <span>11:00</span>
+                    </label>
+
+                    <label>
+                        <input type="radio" name="option" value="12:00" />
+                        <span>12:00</span>
+                    </label>
+
+                    <label>
+                        <input type="radio" name="option" value="13:00" />
+                        <span>13:00</span>
+                    </label>
+
+                    <label>
+                        <input type="radio" name="option" value="14:00" />
+                        <span>14:00</span>
+                    </label>
+
+                    <label>
+                        <input type="radio" name="option" value="15:00" />
+                        <span>15:00</span>
+                    </label>
+
                 </div>
-                
+        
                 <footer class="fixed">
-    
-                    <button type="submit">Salvar</button>
-    
+                    <a href="schedules-new.html">Voltar</a>
+                    <button type="submit">Continuar</button>
                 </footer>
+    
             </form>
 
-        </main>        
+        </main>
 
     </section>
+
+    <script src="bundle.js"></script>
 
 </body>
 </html>

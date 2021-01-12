@@ -29,7 +29,7 @@
     
     <header id="header">
 
-        <div class="overlay"></div>
+        <div class="overlay" data-close ="menu"></div>
         <a href="index.html#home"><img src="assets/images/ferrari-logo.svg" class="logo" alt="Logo Ferrari" /></a>
         <button type="button" id="btn-open" aria-label="Abrir Menu">
             <svg id="menu-black-18dp" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
@@ -39,7 +39,7 @@
         </button>
         <div class="menu">
             <nav>
-                <button type="button" id="btn-close" aria-label="Fechar Menu">
+                <button type="button" id="btn-close" data-close ="menu" aria-label="Fechar Menu">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0,0H24V24H0Z" fill="none"/><path d="M19,6.41,17.59,5,12,10.59,6.41,5,5,6.41,10.59,12,5,17.59,6.41,19,12,13.41,17.59,19,19,17.59,13.41,12Z"/></svg>
                 </button>
                 <ul>
@@ -267,5 +267,6 @@
 
     </footer>
 
+    <script src="bundle.js"></script>
 </body>
 </html>
