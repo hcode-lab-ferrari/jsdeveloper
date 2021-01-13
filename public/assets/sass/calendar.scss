@@ -64,6 +64,9 @@
             &:hover {
                 background-color: var(--gray-7);
             }
+            &.month-prev, &.month-next {
+                color: var(--gray-2);
+            }
             &.active {
                 background-color: var(--blue);
                 color: var(--white);
