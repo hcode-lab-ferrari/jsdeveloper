@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  },
+  "apiKey": "AIzaSyBOxKmFhLGBx3j1dTAl5G2vBxgTl-mVeBs",
+  "authDomain": "ferrari-jrangel.firebaseapp.com",
+  "projectId": "ferrari-jrangel",
+  "storageBucket": "ferrari-jrangel.appspot.com",
+  "messagingSenderId": "189049708244",
+  "appId": "1:189049708244:web:907dc4ea319c7fefef6541",
+  "measurementId": "G-52QN4BM51V"
+}
