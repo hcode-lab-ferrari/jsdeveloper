@@ -100,8 +100,15 @@ export function showAlertError(form) {
         alertElement.innerHTML = error.message
         alertElement.style.display = "block"
 
-    }
+    }    
 
-    
+}
+
+export function formatCurrency(value) {
+
+    return parseFloat(value).toLocaleString('pt-br', {
+        style: 'currency',
+        currency: 'BRL'
+    })
 
 }
