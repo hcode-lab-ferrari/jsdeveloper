@@ -41,8 +41,15 @@ if(authPage){
                 showAuthForm('reset')
                 break
             default :
-                //showAuthForm('auth-email')
-                showAuthForm('login')
+
+                const params = getQueryString()
+
+                if (params.mode === 'resetPassword') {
+                    showAuthForm('reset')
+                } else {
+                    //showAuthForm('auth-email')
+                    showAuthForm('login')
+                }
         }
     }
 
@@ -166,6 +173,41 @@ if(authPage){
                 btnSubmit.innerHTML = "Enviar";
 
             })
+
+    })
+
+    const formReset = document.querySelector('#reset')
+
+    formReset.addEventListener('submit', e => {
+
+        e.preventDefault();
+
+        const btnSubmit = formReset.querySelector('[type=submit]')
+
+        btnSubmit.disabled = true
+        btnSubmit.innerHTML = "Redefinindo...";
+
+        const { oobCode } = getQueryString()
+        const { password } = getFormValues(formReset)
+
+        hideAlertError(formReset)
+
+        auth
+            .verifyPasswordResetCode(oobCode)
+            .then(() => auth.confirmPasswordReset(oobCode, password))
+            .then(() => {
+
+                window.location.href = "/";
+
+            })
+            .catch(showAlertError(formReset))
+            .finally(() => {
+
+                btnSubmit.disabled = false
+                btnSubmit.innerHTML = "Redefinir";
+
+            })
+
 
     })
 
