@@ -112,3 +112,12 @@ export function formatCurrency(value) {
     })
 
 }
+
+export function onSnapshotError(err) {
+
+    const pathname = encodeURIComponent(window.location.pathname);
+    const search = encodeURIComponent(window.location.search);
+
+    window.location.href = `/auth.html?url=${pathname}${search}`;
+
+}

@@ -1,5 +1,5 @@
 import firebase from './firebase-app';
-import { getFormValues, hideAlertError, showAlertError } from './utils';
+import { getFormValues, getQueryString, hideAlertError, showAlertError } from './utils';
 
 const authPage = document.querySelector('main#auth')
 
@@ -108,8 +108,64 @@ if(authPage){
 
         auth
             .signInWithEmailAndPassword(values.email, values.password)
-            .then(response => window.location.href = "/")
+            .then(response => {
+
+                const values = getQueryString()
+
+                if (values.url) {
+                    window.location.href = `http://localhost:8080${values.url}`
+                } else {
+                    window.location.href = "/"
+                }
+
+            })
             .catch(showAlertError(formAuthLogin))
+
+    })
+
+    const formForget = document.querySelector('#forget')
+
+    formForget.addEventListener('submit', e => {
+
+        e.preventDefault()
+
+        const btnSubmit = formForget.querySelector('[type=submit]');
+        const message = formForget.querySelector('.message');
+        const field = formForget.querySelector('.field');
+        const actions = formForget.querySelector('.actions');
+
+        hideAlertError(formForget)
+
+        const values = getFormValues(formForget)
+
+        message.style.display = "none";
+
+        btnSubmit.disabled = true;
+        btnSubmit.innerHTML = "Enviando...";
+
+        auth
+            .sendPasswordResetEmail(values.email)
+            .then(() => {
+
+                field.style.display = 'none';
+                actions.style.display = 'none';
+                message.style.display = "block";
+
+            })
+            .catch(error => {
+
+                field.style.display = 'block';
+                actions.style.display = 'block';
+
+                showAlertError(formForget)(error);
+
+            })
+            .finally(() => {
+
+                btnSubmit.disabled = false;
+                btnSubmit.innerHTML = "Enviar";
+
+            })
 
     })
 

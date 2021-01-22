@@ -1,5 +1,5 @@
 import firebase from './firebase-app'
-import { appendTemplate, formatCurrency, getQueryString, setFormValues } from './utils'
+import { appendTemplate, formatCurrency, getQueryString, onSnapshotError, setFormValues } from './utils'
 
 let serviceSummary = [];
 
@@ -69,7 +69,7 @@ const renderServiceOptions = (context, serviceOptions) => {
             });
             */
 
-            console.log(result.sort((a, b) => {
+            result.sort((a, b) => {
 
                 if (a.name > b.name) {
                     return 1;
@@ -79,7 +79,7 @@ const renderServiceOptions = (context, serviceOptions) => {
                     return 0;
                 }
 
-            }));
+            });
 
             renderServiceSummary(context, serviceOptions)
 
@@ -146,7 +146,7 @@ document.querySelectorAll("#schedules-services").forEach(page => {
         renderServiceOptions(page, services);
         renderServiceSummary(page, services);
 
-    });
+    }, onSnapshotError);
 
     const params = getQueryString();
 
