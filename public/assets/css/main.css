@@ -1206,6 +1206,7 @@ header.page-title hr {
   margin-bottom: 1rem;
   border: 1px solid transparent;
   border-radius: var(--border-radius);
+  display: none;
 }
 .alert.danger {
   color: var(--danger-color);
@@ -1735,6 +1736,11 @@ header.page-title hr {
   margin: var(--space) 0;
   min-width: 256px;
 }
+#change-photo form.cropping img {
+  height: auto;
+  border-radius: 0;
+  margin-top: 0;
+}
 
 @media (min-width: 1200px) {
   #change-photo form img {
@@ -2029,6 +2035,24 @@ header.page-title hr {
 #schedules-payment {
   position: relative;
 }
+#schedules-payment.keyboard-open {
+  margin-bottom: 0;
+  height: calc(100vh - 60px);
+}
+#schedules-payment.keyboard-open > main form {
+  max-width: 100%;
+}
+#schedules-payment.keyboard-open footer {
+  position: static;
+  width: 100vw;
+  margin-left: -20px;
+}
+#schedules-payment .name {
+  text-transform: uppercase;
+}
+#schedules-payment .nametspan {
+  text-transform: uppercase;
+}
 #schedules-payment > header {
   height: 260px;
   min-height: 260px;
@@ -2088,6 +2112,18 @@ header.page-title hr {
 @media (min-width: 1200px) {
   #schedules-payment {
     position: static;
+  }
+  #schedules-payment.keyboard-open {
+    margin-bottom: 0;
+    height: calc(100vh - 60px);
+  }
+  #schedules-payment.keyboard-open > main form {
+    max-width: 1200px;
+  }
+  #schedules-payment.keyboard-open footer {
+    position: fixed;
+    width: 100%;
+    margin-left: initial;
   }
   #schedules-payment > header {
     height: 160px;
@@ -2178,6 +2214,149 @@ header.page-title hr {
 @media (min-width: 1200px) {
   #schedules-complete main footer.fixed {
     justify-content: flex-start;
+  }
+}
+#schedules-address main {
+  margin-top: 20px;
+}
+#schedules-address main form hr {
+  margin: 20px auto;
+  border: none;
+  border-top: var(--gray-3) 1px solid;
+}
+#schedules-address main form .btn-create {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  background: transparent;
+  color: var(--black);
+  background-color: var(--green);
+  color: var(--white);
+}
+#schedules-address main form .btn-create:hover {
+  background-color: var(--black-10);
+}
+#schedules-address main form .btn-create:active {
+  background-color: var(--black-75);
+}
+#schedules-address main form .btn-create:disabled {
+  opacity: 0.5;
+  cursor: no-drop;
+  background-color: var(--gray-3);
+  color: var(--dark-0);
+}
+#schedules-address main form .btn-create:disabled:hover, #schedules-address main form .btn-create:disabled:active {
+  background-color: var(--gray-3);
+  color: var(--dark-0);
+}
+#schedules-address main form .btn-create:hover {
+  background-color: var(--green-hover);
+}
+#schedules-address main form .btn-create:active {
+  background-color: var(--green-active);
+}
+#schedules-address main form .btn-update {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  background: transparent;
+  color: var(--black);
+  background-color: var(--gray-3);
+  color: var(--gray-0);
+}
+#schedules-address main form .btn-update:hover {
+  background-color: var(--black-10);
+}
+#schedules-address main form .btn-update:active {
+  background-color: var(--black-75);
+}
+#schedules-address main form .btn-update:disabled {
+  opacity: 0.5;
+  cursor: no-drop;
+  background-color: var(--gray-3);
+  color: var(--dark-0);
+}
+#schedules-address main form .btn-update:disabled:hover, #schedules-address main form .btn-update:disabled:active {
+  background-color: var(--gray-3);
+  color: var(--dark-0);
+}
+#schedules-address main form .btn-update:hover {
+  background-color: var(--gray-hover);
+}
+#schedules-address main form .btn-update:active {
+  background-color: var(--gray-active);
+}
+#schedules-address main form .addresses {
+  flex-direction: column;
+}
+#schedules-address main form .addresses label {
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+#schedules-address main form .addresses label address {
+  font-style: normal;
+  margin-left: 10px;
+}
+#schedules-address main form .addresses label .circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: var(--gray-10) 2px solid;
+  justify-content: center;
+  align-items: center;
+}
+#schedules-address main form .addresses label .circle > div {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--gray);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+#schedules-address main form .addresses label:hover .circle {
+  border: var(--gray-8) 2px solid;
+}
+#schedules-address main form .addresses label:hover .circle > div {
+  opacity: 0.2;
+}
+#schedules-address main form .addresses label input {
+  display: none;
+}
+#schedules-address main form .addresses label input:checked + .circle > div {
+  opacity: 1;
+  background-color: var(--blue);
+}
+
+@media (min-width: 992px) {
+  #schedules-address main form {
+    max-width: 600px;
+  }
+  #schedules-address main form .btn-create {
+    width: max-content;
   }
 }
 
