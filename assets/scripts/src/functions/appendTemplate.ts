@@ -1,9 +1,9 @@
 export function appendTemplate(element: Element, tagName: string, html: string) {
-    const wrapElement = document.createElement(tagName)
+    const wrapElement = document.createElement(tagName);
 
-    wrapElement.innerHTML = html
+    wrapElement.innerHTML = html;
 
-    element.append(wrapElement)
+    element.append(wrapElement);
 
-    return wrapElement
+    return wrapElement;
 }
